@@ -5,11 +5,55 @@
 	
 	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 	
+	<script>
+	var size_check = function (width) {
+		if (width >= 1300){
+			document.getElementById("photo_column").style.display = "block";
+		}
+		else {
+		    document.getElementById("photo_column").style.display = "none";
+		}	
+	};
+	
+	var onresize = function(e) {
+	    // see https://stackoverflow.com/questions/7754013/hiding-columns-in-table-javascript
+		// and https://stackoverflow.com/questions/15840347/get-browser-width-and-height-after-user-resizes-the-window
+	    width = e.target.outerWidth;
+		size_check(width);
+	};
+	window.addEventListener("resize", onresize);
+	window.onload = function (){
+		size_check(window.innerWidth);
+	}
+	</script>
+	
 	<style>*{
        font-family: sans-serif; 
        background-color: #2b362b;
        color: #dae7da
     }
+	.body_table{
+		width: 100%;
+		cellpadding: 5;
+		cellspacing: 0;
+	}
+	.body_left_td{
+		vertical-align: top;
+	}
+	.body_middle_td{
+		vertical-align: top;
+	}
+	.body_middle_div{
+        margin: auto;
+		width: 100%;
+		max-width: 950px;
+		text-align: left;
+	
+	}
+	.body_right_td{
+		vertical-align: top;
+		width: 250px;
+	}
     .main_text{
         margin: auto;
 		margin-top: 0.5cm;
@@ -25,6 +69,12 @@
         max-width: 700px;
 		center:True
 	}
+	.headshot-img{
+		display: block;
+		margin: auto;
+		width: 100%;
+		background-color: #dae7da;
+	}
 	.earring-img{
 		display: block;
 		margin: auto;
@@ -39,12 +89,15 @@
   </head>
 
   <body>
-    <div class="main_text">
-      <h1>Koen Bresters</h1>
+	<table class="body_table">
+	<tbody>
+	<td class="body_middle_td">
+	<div class="body_middle_div">
+	  <h1>Koen Bresters</h1>
       <p>
-	    Graduate student at the Berlin Mathematical School (specifically at Freie Universität Berlin).
+	    Graduate student at Freie Universität Berlin, as part of the Berlin Mathematical School.
         I'm interested in applications of (\(\infty\)-) categorical and (higher) algebraic tools to algebraic topology, algebraic geometry and mathematical logic.
-		Currently I'm working on relating the sheaf-based homology theory considered in my bachelor thesis to the notion of shape of \(\infty\)-topoi, which is expected to result in further properties and comparison results.
+		Currently I'm working on relating the sheaf-based homology theory considered in my bachelor thesis to the notion of shape of \(\infty\)-topoi, which is expected to reveal further properties and comparison results.
       </p>
       <p>
         <h4>Contact</h4>
@@ -60,6 +113,14 @@
       </ul>
       
       
+	  <h4>CV</h4>
+	  [will be added shortly]
+	  
+	  <h4>Conference/workshop attendence</h4>
+	  <ul>
+		<li>(future) Workshop on Six-Functor Formalisms, TU Darmstadt, November 17-19, 2025, see <a href="https://www.mathematik.tu-darmstadt.de/algebra/forschung_algebra/konferenzen_und_workshops_ag_algebra/workshop_sixfunctor_formalisms.en.jsp">this</a></li>
+		<li>Conference Higher Invariants: interactions between arithmetic geometry and global analysis, Regensburg October 6.-10. 2025, see <a href="https://sfb-higher-invariants.app.uni-regensburg.de/index.php?title=Conference_Higher_Invariants:_interactions_between_arithmetic_geometry_and_global_analysis">this</a></li>
+	  </ul>
       
       <h4>Math-related side-projects</h4>
       <ul>
@@ -69,20 +130,28 @@
         <li>Other older or poorly documented projects can be found on my github.</li>
       </ul>
 	  
-	  <h4>CV</h4>
-	  [will be added shortly]
-	  
 	  <h4>Gallery</h4>
+	  
+	</div>
+	</td>
+	<td class="body_right_td" id="photo_column">
+		<img class="headshot-img" src="spun_sine_curve.svg" alt="The Hawaiian earring"/>
+		<i>me on [temporary image]</i>
+	</td>
+	</tbody>
+	</table>
+	
+    <div class="main_text">
 		<div class="image_box">
 			<img class="earring-img" src="earring.svg" alt="The Hawaiian earring"/>
-			<em>
+			From my bachelor's thesis: <em>
 				Applying Mayer-Vietoris to the bottom & top half of the Hawaiian earring shows its
 				1st sheaf homology is the same as the 0th sheaf homology of a convergent sequence, namely the <b>topological</b> product \(\prod_{n=0}^\infty\mathbb{Z}\)
 			</em>
 		</div>
 		<div class="image_box">
 			<img class="earring-img" src="spun_sine_curve.svg" alt="The spun topological sine curve"/>
-			<em>
+			From my bachelor's thesis: <em>
 				A different way of drawing the topologists sine curve, making it more clear why its first homology
 				should be the formal limit \(\lim_{n\to\infty}\bigoplus_{m\geq n}\mathbb{Z}\)
 			</em>
