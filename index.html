@@ -1,5 +1,10 @@
-<html><head>
+<!DOCTYPE html>
+<html>
+<head>
     <title>Koen Bresters</title>
+	
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+	
 	<style>*{
        font-family: sans-serif; 
        background-color: #2b362b;
@@ -7,13 +12,28 @@
     }
     .main_text{
         margin: auto;
+		margin-top: 0.5cm;
         width: 100%;
         max-width: 950px;
         center:True
     }
+	.image_box{
+        margin: auto;
+		margin-top: 0.5cm;
+		margin-bottom: 0.5cm;
+        width: 100%;
+        max-width: 700px;
+		center:True
+	}
+	.earring-img{
+		display: block;
+		margin: auto;
+		width: 75%;
+		background-color: #dae7da;
+	}
     ul {list-style: '- ';}
     h4 {
-        margin-bottom: 0;
+        margin-bottom: 0.15cm;
     }
     </style>
   </head>
@@ -23,7 +43,8 @@
       <h1>Koen Bresters</h1>
       <p>
 	    Graduate student at the Berlin Mathematical School (specifically at Freie Universität Berlin).
-        I'm interested in applications of (infinity-) categorical and algebraic tools
+        I'm interested in applications of (\(\infty\)-) categorical and (higher) algebraic tools to algebraic topology, algebraic geometry and mathematical logic.
+		Currently I'm working on relating the sheaf-based homology theory considered in my bachelor thesis to the notion of shape of \(\infty\)-topoi, which is expected to result in further properties and comparison results.
       </p>
       <p>
         <h4>Contact</h4>
@@ -42,10 +63,31 @@
       
       <h4>Math-related side-projects</h4>
       <ul>
-        <li><a href="https://github.com/koenbres04/ResetOpimization">ResetOpimization</a>: An optimization algorithm for deciding when to reset a speedrun of a game based on your current splits, maximizing the expected time to beat a goal time.</li>
-        <li><a href="https://github.com/koenbres04/FactorioCalculations">FactorioCalculations</a>: Some (poorly documented) python code using linear programming to optimally design factories in Factorio.</li>
+        <li><a href="https://github.com/koenbres04/ResetOptimization">ResetOpimization</a>: An optimization algorithm for deciding when to reset a speedrun of a game based on your current splits, maximizing the expected time to beat a goal time.</li>
+        <li><a href="https://github.com/koenbres04/FactorioCalculations">FactorioCalculations</a>: Some (poorly documented) python code using linear programming to optimally design factories in Factorio.
+		(I plan to document it better when I play the Space Age expansion.)</li>
         <li>Other older or poorly documented projects can be found on my github.</li>
       </ul>
+	  
+	  <h4>CV</h4>
+	  [will be added shortly]
+	  
+	  <h4>Gallery</h4>
+		<div class="image_box">
+			<img class="earring-img" src="earring.svg" alt="The Hawaiian earring"/>
+			<em>
+				Applying Mayer-Vietoris to the bottom & top half of the Hawaiian earring shows its
+				1st sheaf homology is the same as the 0th sheaf homology of a convergent sequence, namely the <b>topological</b> product \(\prod_{n=0}^\infty\mathbb{Z}\)
+			</em>
+		</div>
+		<div class="image_box">
+			<img class="earring-img" src="spun_sine_curve.svg" alt="The spun topological sine curve"/>
+			<em>
+				A different way of drawing the topologists sine curve, making it more clear why its first homology
+				should be the formal limit \(\lim_{n\to\infty}\bigoplus_{m\geq n}\mathbb{Z}\)
+			</em>
+		</div>
     </div>
   
-</body></html>
+</body>
+</html>
